@@ -51,9 +51,21 @@ function App() {
     <div className="app-container">
       <TimerDisplay timer={timer}/>
       <div className="buttons-container">
-        <Button onClick={startTimer} variant={ButtonVariant.START}/>
-        <Button onClick={stopTimer} variant={ButtonVariant.STOP}/>
-        <Button onClick={resetTimer} variant={ButtonVariant.RESET}/>
+        <Button
+          onClick={startTimer}
+          variant={ButtonVariant.START}
+          disabled={!!intervalRef}
+        />
+        <Button
+          onClick={stopTimer}
+          variant={ButtonVariant.STOP}
+          disabled={!intervalRef}
+        />
+        <Button
+          onClick={resetTimer}
+          variant={ButtonVariant.RESET}
+          disabled={!!intervalRef}
+        />
       </div>
     </div>
   )

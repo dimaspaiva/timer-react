@@ -12,6 +12,16 @@ body {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.button:active {
+  opacity: 0.75;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: auto;
 }
 
 .start {
@@ -24,6 +34,11 @@ body {
   color: var(--text-color);
 }
 
+.start:hover:disabled {
+  background-color: transparent;
+  color: var(--start-color);
+}
+
 .stop {
   color: var(--stop-color);
   border-color: var(--stop-color);
@@ -34,6 +49,11 @@ body {
   color: var(--text-color);
 }
 
+.stop:hover:disabled {
+  background-color: transparent;
+  color: var(--stop-color);
+}
+
 .reset {
   color: var(--reset-color);
   border-color: var(--reset-color);
@@ -42,4 +62,9 @@ body {
 .reset:hover {
   background-color: var(--reset-color);
   color: var(--text-color);
+}
+
+.reset:hover:disabled {
+  background-color: transparent;
+  color: var(--reset-color);
 }

@@ -7,12 +7,19 @@ export enum ButtonVariant {
 }
 
 export type ButtonProps = {
+  disabled: boolean
   onClick: () => void
   variant: ButtonVariant
 }
 
-export function Button({onClick, variant}: ButtonProps) {
+export function Button({
+  onClick,
+  variant,
+  disabled = false
+}: ButtonProps) {
+
   return <button
+    disabled={disabled}
     onClick={onClick}
     className={`${variant} button`}
   >
