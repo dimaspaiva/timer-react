@@ -1,6 +1,7 @@
 import {  useState } from 'react'
 import './App.css'
 import { Button, ButtonVariant } from './components/Button'
+import { formatTimer } from './utils/timer.utils'
 
 const INTERVAL = 1000 // one second
 const ONE_SECOND = 60
@@ -26,6 +27,7 @@ function App() {
 
   function startTimer() {
     if (intervalRef) return
+
     const newIntervalRef = setInterval(() => {
       setTimer((actualTimer) => {
         const draftTimer = actualTimer - 1
@@ -48,10 +50,6 @@ function App() {
     if (intervalRef) return
 
     setTimer(TIMER_PERIOD)
-  }
-
-  function formatTimer (time: number): string {
-    return time.toString().padStart(2, '0')
   }
 
   const formattedMinutes = formatTimer(minutes)
