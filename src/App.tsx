@@ -44,10 +44,14 @@ function App() {
 
   return (
    <div className="app-container">
-    <h1>{formattedMinutes}:{formattedSeconds}</h1>
-    <div style={{ padding: '1rem', fontSize: '2rem'}} onClick={startTimer}>START</div>
-    <div style={{ padding: '1rem', fontSize: '2rem'}} onClick={stopTimer}>STOP</div>
-    <div style={{ padding: '1rem', fontSize: '2rem'}} onClick={resetTimer}>RESET</div>
+    <div className="timer-container">
+      <h1 className="timer">{formattedMinutes}:{formattedSeconds}</h1>
+    </div>
+    <div className="buttons-container">
+      <div className="start button" onClick={startTimer}>START</div>
+      <div className="stop button" onClick={stopTimer}>STOP</div>
+      <div className="reset button" onClick={resetTimer}>RESET</div>
+    </div>
    </div>
   )
 }

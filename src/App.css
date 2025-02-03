@@ -4,3 +4,67 @@
   padding: 2rem;
   text-align: center;
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timer-container {
+  padding: 0 3rem;
+  border: 0.125rem solid #adadad;
+  border-radius: 0.5rem;
+}
+
+.timer {
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.button {
+  border: solid 0.125rem;
+  border-radius: 0.75rem;
+  transition: 0.5s;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.start {
+  color: #5b9c76;
+  border-color: #5b9c76;
+}
+
+.start:hover {
+  background-color: #5b9c76;
+  color: #eaeaea;
+}
+
+.stop {
+  color: #9a72c9;
+  border-color: #9a72c9;
+}
+
+.stop:hover {
+  background-color: #9a72c9;
+  color: #eaeaea;
+}
+
+.reset {
+  color: #c95572;
+  border-color: #c95572;
+}
+
+.reset:hover {
+  background-color: #c95572;
+  color: #eaeaea;
+}
