@@ -11,17 +11,6 @@
   gap: 2rem;
 }
 
-.timer-container {
-  padding: 0 3rem;
-  border: 0.125rem solid #adadad;
-  border-radius: 0.5rem;
-}
-
-.timer {
-  font-size: 4rem;
-  letter-spacing: 0.5rem;
-}
-
 .buttons-container {
   display: flex;
   gap: 1rem;

@@ -1,18 +1,12 @@
 import {  useState } from 'react'
 import './App.css'
 import { Button, ButtonVariant } from './components/Button'
-import { formatTimer } from './utils/timer.utils'
-
-const INTERVAL = 1000 // one second
-const ONE_SECOND = 60
-const TIMER_PERIOD = ONE_SECOND * 5 // five minutes in seconds
+import { TimerDisplay } from './components/Timer'
+import { INTERVAL, TIMER_PERIOD } from './constants/timer.constants'
 
 function App() {
   const [timer, setTimer] = useState(TIMER_PERIOD)
   const [intervalRef, setIntervalRef] = useState<number | null>(null)
-
-  const seconds = timer % ONE_SECOND
-  const minutes = Math.floor(timer / ONE_SECOND)
 
   function handleEndOfTime(actualTimer: number, timerId: number) {
     if (actualTimer > 0) {
@@ -52,14 +46,10 @@ function App() {
     setTimer(TIMER_PERIOD)
   }
 
-  const formattedMinutes = formatTimer(minutes)
-  const formattedSeconds = formatTimer(seconds)
 
   return (
     <div className="app-container">
-      <div className="timer-container">
-        <h1 className="timer">{formattedMinutes}:{formattedSeconds}</h1>
-      </div>
+      <TimerDisplay timer={timer}/>
       <div className="buttons-container">
         <Button onClick={startTimer} variant={ButtonVariant.START}/>
         <Button onClick={stopTimer} variant={ButtonVariant.STOP}/>
