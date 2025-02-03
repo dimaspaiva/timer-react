@@ -1,0 +1,45 @@
+body {
+  --start-color: #5b9c76;
+  --stop-color: #9a729a;
+  --reset-color: #c95572;
+  --text-color: #eaeaea;
+}
+
+.button {
+  border: solid 0.125rem;
+  border-radius: 0.75rem;
+  transition: 0.5s;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+
+.start {
+  color: var(--start-color);
+  border-color: var(--start-color);
+}
+
+.start:hover {
+  background-color: var(--start-color);
+  color: var(--text-color);
+}
+
+.stop {
+  color: var(--stop-color);
+  border-color: var(--stop-color);
+}
+
+.stop:hover {
+  background-color: var(--stop-color);
+  color: var(--text-color);
+}
+
+.reset {
+  color: var(--reset-color);
+  border-color: var(--reset-color);
+}
+
+.reset:hover {
+  background-color: var(--reset-color);
+  color: var(--text-color);
+}

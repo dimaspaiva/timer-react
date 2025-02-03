@@ -1,5 +1,6 @@
 import {  useState } from 'react'
 import './App.css'
+import { Button, ButtonVariant } from './components/Button'
 
 const INTERVAL = 1000 // one second
 const ONE_SECOND = 60
@@ -57,16 +58,16 @@ function App() {
   const formattedSeconds = formatTimer(seconds)
 
   return (
-   <div className="app-container">
-    <div className="timer-container">
-      <h1 className="timer">{formattedMinutes}:{formattedSeconds}</h1>
+    <div className="app-container">
+      <div className="timer-container">
+        <h1 className="timer">{formattedMinutes}:{formattedSeconds}</h1>
+      </div>
+      <div className="buttons-container">
+        <Button onClick={startTimer} variant={ButtonVariant.START}/>
+        <Button onClick={stopTimer} variant={ButtonVariant.STOP}/>
+        <Button onClick={resetTimer} variant={ButtonVariant.RESET}/>
+      </div>
     </div>
-    <div className="buttons-container">
-      <div className="start button" onClick={startTimer}>START</div>
-      <div className="stop button" onClick={stopTimer}>STOP</div>
-      <div className="reset button" onClick={resetTimer}>RESET</div>
-    </div>
-   </div>
   )
 }
 
