@@ -1,8 +1,8 @@
 import {  useState } from 'react'
 import './App.css'
 
-const ONE_SECOND = 60
-const TIMER_PERIOD = ONE_SECOND * 5 // 5 minutes in seconds
+const ONE_SECOND = 5
+const TIMER_PERIOD = ONE_SECOND * 1 // 5 minutes in seconds
 
 function App() {
   const [timer, setTimer] = useState(TIMER_PERIOD)
@@ -11,14 +11,27 @@ function App() {
   const seconds = timer % ONE_SECOND
   const minutes = Math.floor(timer / ONE_SECOND)
 
+  function handleEndOfTime(actualTimer: number, timerId: number) {
+    if (actualTimer > 0) {
+      return actualTimer
+    }
+
+    clearInterval(timerId)
+    setIntervalRef(null)
+
+    return 0
+  }
+
   function startTimer() {
     if (intervalRef) return
     const newIntervalRef = setInterval(() => {
       setTimer((actualTimer) => {
         const draftTimer = actualTimer - 1
-        return draftTimer
+
+        return handleEndOfTime(draftTimer, newIntervalRef)
       })
     }, 1000);
+
     setIntervalRef(newIntervalRef)
   }
 
