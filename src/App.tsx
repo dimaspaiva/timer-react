@@ -1,8 +1,9 @@
 import {  useState } from 'react'
 import './App.css'
 
-const ONE_SECOND = 5
-const TIMER_PERIOD = ONE_SECOND * 1 // 5 minutes in seconds
+const INTERVAL = 1000 // one second
+const ONE_SECOND = 60
+const TIMER_PERIOD = ONE_SECOND * 5 // five minutes in seconds
 
 function App() {
   const [timer, setTimer] = useState(TIMER_PERIOD)
@@ -30,7 +31,7 @@ function App() {
 
         return handleEndOfTime(draftTimer, newIntervalRef)
       })
-    }, ONE_SECOND);
+    }, INTERVAL);
 
     setIntervalRef(newIntervalRef)
   }
