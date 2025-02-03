@@ -30,7 +30,7 @@ function App() {
 
         return handleEndOfTime(draftTimer, newIntervalRef)
       })
-    }, 1000);
+    }, ONE_SECOND);
 
     setIntervalRef(newIntervalRef)
   }
